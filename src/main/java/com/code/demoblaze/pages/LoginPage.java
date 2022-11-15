@@ -24,10 +24,10 @@ public class LoginPage {
 
 
     public WebElement getInpUserName () {
-        return driver.findElement(By.xpath(".//input[@id='loginusername']"));
+        return driver.findElement(By.xpath("//input[@id='loginusername']"));
     }
     public WebElement getInpPassword () {
-        return driver.findElement(By.xpath(".//input[@id='loginpassword']"));
+        return driver.findElement(By.xpath("//input[@id='loginpassword']"));
     }
     public WebElement getBtnLogin() {
         return driver.findElement(By.xpath("//input[@oneclick='logIn()']"));
