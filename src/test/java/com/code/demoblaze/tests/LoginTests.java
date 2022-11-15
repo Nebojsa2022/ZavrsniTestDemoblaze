@@ -5,13 +5,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class LoginTests extends BaseTest {
+public class LoginTests {
 
     @Test
     public void verifyLoginWithCorrectCredentials () {
+        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
+        ChromeDriver driver =new ChromeDriver();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.openPage();
-        loginPage.clickOnLoginBtn();
+        loginPage.clickOnLoginLink();
         loginPage.setUserName("test");
         loginPage.setPassword("test");
         loginPage.clickOnLogin();

@@ -18,7 +18,7 @@ public class LoginPage {
         this.driver.manage().window().maximize();
     }
 
-    public WebElement getLoginBtn () {
+    public WebElement getLoginLink () {
         return driver.findElement(By.xpath("//a[@id='login2']"));
     }
 
@@ -33,18 +33,22 @@ public class LoginPage {
         return driver.findElement(By.xpath("//input[@oneclick='logIn()']"));
     }
 
-    public void clickOnLoginBtn() {
-        this.getLoginBtn().click();
+    public void clickOnLoginLink() {
+
+        this.getLoginLink().click();
     }
 
     public void setUserName(String userName) {
+
         this.getInpUserName().sendKeys(userName);
     }
 
     public void setPassword(String password) {
+
         this.getInpPassword().sendKeys(password);
     }
     public void clickOnLogin() {
+
         this.getBtnLogin().click();
 
     }
