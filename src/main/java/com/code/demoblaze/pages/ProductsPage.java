@@ -50,9 +50,6 @@ public class ProductsPage {
     }
 
 
-
-
-
     int brojac=0;
     public int addToCart() {
         getHomebtn().click();
@@ -90,7 +87,6 @@ public class ProductsPage {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-
 
 
         return ++brojac;
@@ -198,22 +194,6 @@ public class ProductsPage {
 
 
 
-    public void addProductToCartByName (String name) {
-        List<WebElement> webElementList = this.getListInventoryItems();
-
-        int index = 0;
-        for(int i = 0; i < webElementList.size(); i++) {
-            WebElement webElementItemName = webElementList.get(i).findElement(By.xpath("//a[@class='hrefch']"));
-            String itemName = webElementItemName.getText();
-            if(itemName.equals(name)) {
-                index = i;
-                break;
-            }
-
-        }
-        WebElement btnAddToCart = webElementList.get(index).findElement(By.className("btn btn-success btn-lg"));
-        btnAddToCart.click();
-    }
 
 
 
@@ -280,7 +260,7 @@ public class ProductsPage {
     }
 
 
-  /*  public void addItemToCartByName(List<String> listItemName) {
+     /* public void addItemToCartByName(List<String> listItemName) {
 
 
         List<WebElement> webElementList = new ArrayList<>();
@@ -292,13 +272,21 @@ public class ProductsPage {
 
 
             for (int i = 0; i < webElementList.size(); i++) {
-                WebElement webElementItemName = webElementList.get(i).findElement(By.xpath(".//a[@class='hrefch']"));
+             WebElement webElementItemName = webElementList.get(i);
                 String itemName = webElementItemName.getText();
 
 
 
                 if (itemName.equals(listItemName.get(j))) {
                     index = i;
+                     WebElement item = webElementList.get(index);
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+
+                item.click();
                     break;
                 }
 
@@ -310,12 +298,29 @@ public class ProductsPage {
                 break;
             }
 
-
-
-
-
-
-
+        }
+          try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        getAddToCart().click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        driver.switchTo().alert().accept();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        clickOnHomeBtn();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
      } */
 
