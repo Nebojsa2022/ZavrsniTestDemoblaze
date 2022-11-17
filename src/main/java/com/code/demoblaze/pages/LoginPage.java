@@ -24,13 +24,17 @@ public class LoginPage {
 
 
     public WebElement getInpUserName () {
-        return driver.findElement(By.xpath("//input[@id='loginusername']"));
+        return driver.findElement(By.id("loginusername"));
     }
     public WebElement getInpPassword () {
-        return driver.findElement(By.xpath("//input[@id='loginpassword']"));
+        return driver.findElement(By.id("loginpassword"));
     }
     public WebElement getBtnLogin() {
-        return driver.findElement(By.xpath("//input[@oneclick='logIn()']"));
+        return driver.findElement(By.xpath("//button[@onclick='logIn()']"));
+    }
+
+    public WebElement getLogout(){
+        return driver.findElement(By.id("logout2"));
     }
 
     public void clickOnLoginLink() {
@@ -52,6 +56,7 @@ public class LoginPage {
         this.getBtnLogin().click();
 
     }
+
 
 
 
